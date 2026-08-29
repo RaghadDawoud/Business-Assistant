@@ -32,30 +32,39 @@ python app.py                       # launch the Gradio chat UI
 
 ## Project Structure
 
+```text
 business-assistant/
-├── config.py # all settings/paths in one place
-├── app.py # Gradio UI entry point
+├── config.py                    # All settings and paths in one place
+├── app.py                       # Gradio UI entry point
 ├── requirements.txt
 ├── .env.example
+│
 ├── data/
-│ ├── documents/ # policy/FAQ files (.txt/.pdf/.docx) -> RAG source
-│ ├── sales/sample_sales.csv # sales data -> pandas analysis source
-│ ├── chroma_db/ # generated: vector store (after build_vector_db.py)
-│ └── memory.db # generated: conversation + preference history
+│   ├── documents/              # Policy/FAQ files (.txt/.pdf/.docx) → RAG source
+│   ├── sales/
+│   │   └── sample_sales.csv    # Sales data → pandas analysis source
+│   ├── chroma_db/              # Generated: vector store after build_vector_db.py
+│   └── memory.db               # Generated: conversation + preference history
+│
 ├── scripts/
-│ └── build_vector_db.py # (re)index documents into ChromaDB
+│   └── build_vector_db.py      # (Re)index documents into ChromaDB
+│
 └── src/
-├── rag/
-│ ├── ingest.py # load docs -> chunk -> embed -> store (LangChain + ChromaDB)
-│ └── retriever.py # similarity search over stored chunks
-├── analysis/
-│ └── sales_functions.py # safe, predefined pandas queries
-├── memory/
-│ └── memory_store.py # SQLite: conversation history + preferences
-└── agent/
-├── llm_client.py # Groq API wrapper
-├── router.py # tool schemas + dispatcher (the "routing" logic)
-└── agent.py # orchestrates: history -> LLM -> tools -> answer
+    ├── rag/
+    │   ├── ingest.py           # Load docs → chunk → embed → store
+    │   └── retriever.py        # Similarity search over stored chunks
+    │
+    ├── analysis/
+    │   └── sales_functions.py  # Safe, predefined pandas queries
+    │
+    ├── memory/
+    │   └── memory_store.py     # SQLite: conversation history + preferences
+    │
+    └── agent/
+        ├── llm_client.py       # Groq API wrapper
+        ├── router.py           # Tool schemas + dispatcher (routing logic)
+        └── agent.py            # Orchestrates: history → LLM → tools → answer
+```
 
 
 ## How It Works
