@@ -5,8 +5,7 @@ It answers three kinds of questions through a single chat interface:
 policy/FAQ questions from your documents (RAG), sales and performance questions from
 your data (pandas analysis), and it remembers context across the conversation (SQLite).
 
-Instead of hardcoded logic deciding which question goes where, the LLM itself picks
-the right tool for each query via function-calling, that's the "agent" part.
+
 
 ## Tech Stack
 
@@ -63,7 +62,7 @@ business-assistant/
 
 1. A user message comes in through the Gradio chat.
 2. The agent (`src/agent/agent.py`) sends it to Groq along with a list of available tools.
-3. The LLM decides — via function-calling, not keyword matching — whether it needs to
+3. The LLM decides via function-calling, not keyword matching whether it needs to
    search documents, query sales data, both, or neither.
 4. Chosen tool run, their results go back to the LLM, which composes the final answer.
 5. The exchange is logged to SQLite so future turns have conversation context.
