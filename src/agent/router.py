@@ -10,7 +10,7 @@ import json
 from src.rag.retriever import search_documents
 from src.analysis import sales_functions as sf
 
-# --- Tool schemas exposed to the LLM ---
+# Tool schemas exposed to the LLM
 TOOLS = [
     {
         "type": "function",
@@ -76,6 +76,35 @@ TOOLS = [
             },
         },
     },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "best_month",
+            "description": "Find the month with the highest total revenue within a given year (format YYYY).",
+            "parameters": {
+                "type": "object",
+                "properties": {"year": {"type": "string"}},
+                "required": ["year"],
+            },
+        },
+    },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "top_products_by_revenue",
+            "description": "Get best-selling products ranked by revenue (not quantity), optionally for one month or year.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "n": {"type": "integer"},
+                    "period": {"type": "string"},
+                },
+            },
+        },
+    },
+
 ]
 
 # Maps tool name -> actual Python function to run
@@ -85,6 +114,8 @@ _FUNCTION_MAP = {
     "top_products": sf.top_products,
     "low_performers": sf.low_performers,
     "sales_summary": sf.sales_summary,
+    "best_month": sf.best_month,
+    "top_products_by_revenue": sf.top_products_by_revenue,
 }
 
 

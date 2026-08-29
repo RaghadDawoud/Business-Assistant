@@ -15,8 +15,8 @@ def respond(message, chat_history):
 
 
 with gr.Blocks(title="Business Assistant") as demo:
-    gr.Markdown("# Business Assistant (Arabic / English)")
-    chatbot = gr.Chatbot()
+    gr.Markdown("# Business Assistant")
+    chatbot = gr.Chatbot(height=280)
     msg = gr.Textbox(placeholder="Ask about policies, sales, or anything else...")
     clear = gr.Button("Clear")
 
