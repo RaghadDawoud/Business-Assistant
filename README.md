@@ -1,6 +1,6 @@
 # Business Assistant
 
-A conversational agent (Arabic + English) for small Saudi retail/service businesses.
+A conversational agent (Arabic + English) for small retail/service businesses.
 Answers policy questions from documents (RAG), sales questions from a CSV (pandas),
 and remembers conversation context (SQLite).
 
