@@ -71,15 +71,15 @@ business-assistant/
 
 ### English Interface
 
-![English Interface 1](screenshots/English_interface1.png)
+<img src="screenshots/English_interface1.png" width="700">
 
-![English Interface 2](screenshots/English_interface2.png)
+<img src="screenshots/English_interface2.png" width="700">
 
 ### Arabic Interface
 
-![Arabic Interface 1](screenshots/Arabic_interface1.png)
+<img src="screenshots/Arabic_interface1.png" width="700">
 
-![Arabic Interface 2](screenshots/Arabic_interface2.png)
+<img src="screenshots/Arabic_interface2.png" width="700">
 
 
 ## How to Run
