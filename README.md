@@ -6,7 +6,7 @@ policy/FAQ questions from your documents (RAG), sales and performance questions 
 your data (pandas analysis), and it remembers context across the conversation (SQLite).
 
 Instead of hardcoded logic deciding which question goes where, the LLM itself picks
-the right tool for each query via function-calling — that's the "agent" part.
+the right tool for each query via function-calling, that's the "agent" part.
 
 ## Tech Stack
 
@@ -68,54 +68,80 @@ business-assistant/
 4. Chosen tool run, their results go back to the LLM, which composes the final answer.
 5. The exchange is logged to SQLite so future turns have conversation context.
 
-
 ## How to Run
 
-1. **Clone or download the project**, then open a terminal inside the `business-assistant` folder.
+### 1. Clone or download the project
 
-2. **Create and activate a virtual environment**
+Open a terminal inside the `business-assistant` folder.
+
+### 2. Create and activate a virtual environment
 
 **Windows (PowerShell):**
 
-    ```powershell
-    python -m venv venv
-    venv\Scripts\activate
-
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
 
 **Mac/Linux:**
 
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-3. **Install dependencies**
+### 3. Install dependencies
 
-    ```bash
-    pip install -r requirements.txt
-    
-4. **Set up your API key**
+```bash
+pip install -r requirements.txt
+```
 
-> **Note:** `.env` is intentionally not included in this repo (it would contain a private
-> API key). You must create your own local copy from the provided template:
+### 4. Set up your API key
 
-    ```bash
-    cp .env.example .env
+> **Note:** `.env` is intentionally not included in this repository because it contains a private API key. Create your own local `.env` file using the provided template.
 
-Then open `.env` and add your Groq API key (get one free at [console.groq.com](https://console.groq.com)):
+**Create `.env` from the template:**
 
-    ```bash
-    GROQ_API_KEY= your_actual_key_here
-   
-    GROQ_MODEL= openai/gpt-oss-120b
+**Windows (PowerShell):**
 
-5. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
-   
-    ```bash
-    python scripts/build_vector_db.py
+```powershell
+Copy-Item .env.example .env
+```
 
-7. **Launch the app**
+**Mac/Linux:**
 
-    ```bash
-    python app.py
+```bash
+cp .env.example .env
+```
 
-Open the local URL it prints (usually `http://127.0.0.1:7860`) in your browser.
+Then open `.env` and add your Groq API key.
+
+Get a free API key from [Groq Console](https://console.groq.com/).
+
+```env
+GROQ_API_KEY=your_actual_key_here
+GROQ_MODEL=openai/gpt-oss-120b
+```
+
+### 5. Build the document index
+
+Run this once to create the vector database. Run it again whenever you add or update files in `data/documents/`.
+
+```bash
+python scripts/build_vector_db.py
+```
+
+### 6. Launch the application
+
+```bash
+python app.py
+```
+
+Open the local URL printed in the terminal, usually:
+
+```text
+http://127.0.0.1:7860
+```
+
+Then open it in your browser.
+
