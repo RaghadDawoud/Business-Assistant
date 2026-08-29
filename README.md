@@ -67,6 +67,21 @@ business-assistant/
 4. Chosen tool run, their results go back to the LLM, which composes the final answer.
 5. The exchange is logged to SQLite so future turns have conversation context.
 
+## Screenshots
+
+### English Interface
+
+![English Interface 1](screenshots/English_interface1.png)
+
+![English Interface 2](screenshots/English_interface2.png)
+
+### Arabic Interface
+
+![Arabic Interface 1](screenshots/Arabic_interface1.png)
+
+![Arabic Interface 2](screenshots/Arabic_interface2.png)
+
+
 ## How to Run
 
 ### 1. Clone or download the project
