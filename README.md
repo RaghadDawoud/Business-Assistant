@@ -86,20 +86,22 @@ business-assistant/
    Windows (PowerShell):
 
     python -m venv venv
+   
     venv\Scripts\activate
 
 
    Mac/Linux:
 
     python3 -m venv venv
+   
     source venv/bin/activate
 
-3. **Install dependencies**
+4. **Install dependencies**
 
     pip install -r requirements.txt
 
     
-4. **Set up your API key**
+5. **Set up your API key**
 
    > **Note:** `.env` is intentionally not included in this repo (it would contain a private
    > API key). You must create your own local copy from the provided template:
@@ -109,13 +111,14 @@ business-assistant/
     Then open `.env` and add your Groq API key (get one free at [console.groq.com](https://console.groq.com)):
 
     GROQ_API_KEY= your_actual_key_here
+   
     GROQ_MODEL= openai/gpt-oss-120b
 
-5. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
+7. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
 
     python scripts/build_vector_db.py
 
-6. **Launch the app**
+8. **Launch the app**
 
     python app.py
 
