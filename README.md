@@ -71,9 +71,9 @@ business-assistant/
 
 ### English Interface
 
-<img src="screenshots/English_interface1.png" width="700">
-
 <img src="screenshots/English_interface2.png" width="700">
+
+<img src="screenshots/English_interface1.png" width="700">
 
 ### Arabic Interface
 
