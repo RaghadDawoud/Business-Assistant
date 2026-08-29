@@ -77,9 +77,13 @@ business-assistant/
 
 ### Arabic Interface
 
-<img src="screenshots/Arabic_interface1.png" width="700">
+<div style="height: 400px; overflow: hidden;">
+  <img src="screenshots/Arabic_interface1.png" width="700">
+</div>
 
-<img src="screenshots/Arabic_interface2.png" width="700">
+<div style="height: 400px; overflow: hidden;">
+  <img src="screenshots/Arabic_interface2.png" width="700">
+</div>
 
 
 ## How to Run
