@@ -75,14 +75,14 @@ business-assistant/
 
 2. **Create and activate a virtual environment**
 
-    **Windows (PowerShell):**
+**Windows (PowerShell):**
 
     ```powershell
     python -m venv venv
     venv\Scripts\activate
 
 
-    **Mac/Linux:**
+**Mac/Linux:**
 
     ```bash
     python3 -m venv venv
@@ -90,28 +90,32 @@ business-assistant/
 
 3. **Install dependencies**
 
+    ```bash
     pip install -r requirements.txt
-
     
 4. **Set up your API key**
 
-   > **Note:** `.env` is intentionally not included in this repo (it would contain a private
-   > API key). You must create your own local copy from the provided template:
+> **Note:** `.env` is intentionally not included in this repo (it would contain a private
+> API key). You must create your own local copy from the provided template:
 
+    ```bash
     cp .env.example .env
 
-    Then open `.env` and add your Groq API key (get one free at [console.groq.com](https://console.groq.com)):
+Then open `.env` and add your Groq API key (get one free at [console.groq.com](https://console.groq.com)):
 
+    ```bash
     GROQ_API_KEY= your_actual_key_here
    
     GROQ_MODEL= openai/gpt-oss-120b
 
 5. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
-
+   
+    ```bash
     python scripts/build_vector_db.py
 
-6. **Launch the app**
+7. **Launch the app**
 
+    ```bash
     python app.py
 
-    Open the local URL it prints (usually `http://127.0.0.1:7860`) in your browser.
+Open the local URL it prints (usually `http://127.0.0.1:7860`) in your browser.
