@@ -21,14 +21,6 @@ the right tool for each query via function-calling — that's the "agent" part.
 | Conversation memory / preferences | SQLite |
 | Chat interface | Gradio |
 
-## Setup
-
-```bash
-pip install -r requirements.txt
-cp .env.example .env                # then add your GROQ_API_KEY
-python scripts/build_vector_db.py   # index the documents in data/documents/
-python app.py                       # launch the Gradio chat UI
-```
 
 ## Project Structure
 
@@ -83,25 +75,25 @@ business-assistant/
 
 2. **Create and activate a virtual environment**
 
-   Windows (PowerShell):
+    **Windows (PowerShell):**
 
+    ```powershell
     python -m venv venv
-   
     venv\Scripts\activate
 
 
-   Mac/Linux:
+    **Mac/Linux:**
 
+    ```bash
     python3 -m venv venv
-   
     source venv/bin/activate
 
-4. **Install dependencies**
+3. **Install dependencies**
 
     pip install -r requirements.txt
 
     
-5. **Set up your API key**
+4. **Set up your API key**
 
    > **Note:** `.env` is intentionally not included in this repo (it would contain a private
    > API key). You must create your own local copy from the provided template:
@@ -114,11 +106,11 @@ business-assistant/
    
     GROQ_MODEL= openai/gpt-oss-120b
 
-7. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
+5. **Build the document index** (run once, and again whenever you update files in `data/documents/`)
 
     python scripts/build_vector_db.py
 
-8. **Launch the app**
+6. **Launch the app**
 
     python app.py
 
